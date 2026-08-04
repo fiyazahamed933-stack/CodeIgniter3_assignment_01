@@ -34,14 +34,10 @@
        <?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error'); } ?>
     </form>
     <br>
-    <p id = "para" class ="fs-5"> Don't have an account yet?  <a href="<?=base_url('user/signup')?>"> Click </a> </p> 
-    <br>
-    
-    
-  </div>  
-  
-    <?php  error_reporting(E_ERROR | E_PARSE);  if($error) echo "<p  class ='fs-5' , style='color:red;'> $error </p>" ?>
-        <script src="<?= base_url('asserts/js/validation.js') ?>"></script>
+    <p id = "para" class ="fs-5"> Don't have an account yet?  <a class="btn btn-success" href="<?=base_url('user/signup')?>"> Click </a> </p> 
+    <br>     
+    </div>  
+<script src="<?= base_url('asserts/js/validation.js') ?>"></script>
 </body>
 
 </html>

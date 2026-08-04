@@ -65,7 +65,7 @@
             $this->form_validation->set_rules('email', 'Email', 'required|trim');
             $this->form_validation->set_rules('password', 'password' ,'required|trim' );
             if($this->form_validation->run() == FALSE){
-                $this->load->view('login_form');
+                $this->load->view('login');
                 return;
             }
             if($this->input->server('REQUEST_METHOD') == 'POST') {

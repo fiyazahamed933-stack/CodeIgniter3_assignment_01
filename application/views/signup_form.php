@@ -50,7 +50,7 @@
       </form>
       <br>
        <p class="text-success fs-5" >
-             Already login   <a href="<?=base_url('user/login')?>"> Click   </a>
+             Already login<a class="btn btn-success"  href="<?=base_url('user/login')?>"> Click   </a>
        </p> 
     
 
