@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titlegit >login page </title>
+    <title>login page </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="icon" href="C:\javascript\microsoft-todo-2019.jpg " >  
        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -22,11 +22,12 @@
         <input class=" form-control  w-75  " type="email" name = "email" id="email_log" > 
         <small class="text-danger"> </small>
         <a></a>
-
+        <?php echo form_error('email')?> 
         <label for="" class = "d-flex justify-content-start  w-75" > Password :</label>
         <input class=" form-control  w-75  " type="password" name="password"  pattern="[0-9]{8}"  title="Password must contain exactly 8 digits" id = "password_log" >
         <small class="text-danger"> </small>
         <a> </a>
+        <?php echo form_error('password')?> 
         <button type="submit" class = "btn btn-success w-75 " >submit</button>
         <br>
         
@@ -40,7 +41,7 @@
   </div>  
   
     <?php  error_reporting(E_ERROR | E_PARSE);  if($error) echo "<p  class ='fs-5' , style='color:red;'> $error </p>" ?>
-    
+        <script src="<?= base_url('asserts/js/validation.js') ?>"></script>
 </body>
-<script src="<?= base_url('asserts/js/validation.js') ?>"></script>
+
 </html>

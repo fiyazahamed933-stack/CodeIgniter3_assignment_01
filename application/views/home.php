@@ -13,6 +13,6 @@
     <div class = "d-flex justify-content-end ">
        <a class="btn btn-primary " href="<?= base_url('user/signup') ?>" role="button">Logout</a>
     </div>
-    
+
 </body>
 </html>
