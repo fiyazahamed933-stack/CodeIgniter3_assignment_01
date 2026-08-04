@@ -33,10 +33,7 @@
        <input type="email" name="email" id="email" placeholder = "enter the email " class="form-control w-75">
        <small class="text-danger"> </small>
         <a></a>
-       
        <?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error'); } ?>
-       
-       
        <br>
        <label for="" class = "d-flex justify-content-start  w-75"> Password  :</label> 
        <input type="password" name="password" id="password1" placeholder = "enter the password "  pattern="[0-9]{8}"  title="Password must contain exactly 8 digits" class="form-control w-75">
