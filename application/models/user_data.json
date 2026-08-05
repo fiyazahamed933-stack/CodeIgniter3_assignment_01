@@ -64,5 +64,11 @@
         "last_name": "Ahmed",
         "email": "riyaedktm@gmail.com",
         "password": "$2y$10$7103TN4TW4mdQxAMUiJn7O1j5J2SEJTAx35DGOu60aelgeKuvHzfq"
+    },
+    {
+        "first_name": "Riyaz",
+        "last_name": "Ahmed",
+        "email": "riyazahmedktm00@gmail.com",
+        "password": "$2y$10$IrtuJAp5zjIYRY0F19tuS.OzI9wcz5.MC8w2rn0BsGIqREroQc4Y."
     }
 ]
