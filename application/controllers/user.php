@@ -13,7 +13,6 @@
         
         public function submit(){
         $this->form_validation->set_rules('first_name', 'First Name', 'required|trim');
-        $this->form_validation->set_rules('last_name', 'Last Name' ,'required|trim' );
         if($this->form_validation->run() == FALSE){
             $this->load->view('signup_form');
             return;

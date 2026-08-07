@@ -1,11 +1,23 @@
+ $('#email_log, #password_log',).focus(function(){
+    $(this).addClass("border border-success").removeClass("border border-danger");
+    });
+
+$('#email_log').on('click', function () {
+    $('#message').text('You have to enter the email.').addClass("text-success");
+});
+
+$('#password_log').on('click', function () {
+    $('#message1').text('You have to enter the email.').addClass("text-success");
+});
+
 function setSuccess(input)
                 {
-                    const formc = input.parent()
+                    const formc = input.parent();
                     const small = input.next('small');
                     const a = small.next('a');
                     small.text(null).removeClass();
                     $(input).addClass("border border-success").removeClass("border border-danger")
-                    a.text("done ").addClass("bi bi-check-circle-fill text-success");
+                    a.text("done").addClass("bi bi-check-circle-fill text-success");
                     $("button").addClass("btn-success").removeClass("btn-danger");
                     
                 }  
@@ -20,6 +32,9 @@ function setError(input,message)
                 $("button").addClass("btn-danger").removeClass("btn-primary");
                 $("#hearder").addClass("text-danger").removeClass("text-success");
                 $("#para").addClass("text-danger").removeClass("text-success");
+                $('#password_log').on('click', function () {
+                    $('#message1').text('You have to enter the email.').addClass("text-success");
+                });             
 }   
 class Login {
 
@@ -106,7 +121,7 @@ class Login {
             validation(){
                 let isvalid = true;
                     if (!this.firstnamecheck()) {
-                            isvalid = false;
+                            isvalid = false;   
                         }
                         if (!this.lastnamecheck()) {
                             isvalid = false;
@@ -138,6 +153,7 @@ class already_login {
                 setSuccess(this.gmail);
                 return true;
                 }
+
             } 
     passwordscheck(){
                 var passwordvalue = this.password.val().trim();
@@ -162,6 +178,7 @@ class already_login {
         return isvalid;
     }
 }
+
 let login = new Login();
 let alreadylogin = new already_login();
 $("#form").on("submit", function(e) {

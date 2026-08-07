@@ -16,8 +16,7 @@
 <div class = " p-4 w-50 h-25 rounded-4 ">
        <form  id="form" action="<?=base_url('user/submit')?>" method="POST" class = "sign" >
         <h4 class="text-success" id = "">SIGN UP</h4>
-        
-       <label for=""  class = "d-flex justify-content-start  w-75" > FirstName  :</label> 
+        <label for=""  class = "d-flex justify-content-start  w-75" > FirstName  :</label> 
        <input type="taxt" name="first_name" id="first_name" placeholder = "enter the fisrt name " class=" form-control w-75 ">
        <?php echo form_error('first_name')?> 
        <small class="text-danger"></small>
@@ -52,13 +51,7 @@
        <p class="text-success fs-5" >
              Already login<a class="btn btn-success"  href="<?=base_url('user/login')?>"> Click   </a>
        </p> 
-    
-
 </div>
-
-
 <script src="<?= base_url('asserts/js/validation.js') ?>"></script>
-
 </body>
-
 </html>

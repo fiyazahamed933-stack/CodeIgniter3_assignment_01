@@ -16,17 +16,20 @@
   <div class = " p-4 w-50 h-25 rounded-4 " >
       
     <form action="<?=base_url('user/login_user')?>" method="POST" class ="p-2" id="loginForm">
-        <h3 class="text-success" id = "hearder"> Log-in to your account </h3>
+        <h3 class="text-success" id = "hearder"  > Log-in to your account </h3>
         <br>
-        <label for="" class = "d-flex justify-content-start  w-75"> Email :</label>
-        <input class=" form-control  w-75  " type="email" name = "email" id="email_log" > 
+        <label for="" class = "d-flex justify-content-start  w-75" > Email :</label>
+        <input class="form-control w-75 shadow-none" type="email" name="email" id="email_log">
+        <p id ="message"> </p>
         <small class="text-danger"> </small>
         <a></a>
         <?php echo form_error('email')?> 
         <label for="" class = "d-flex justify-content-start  w-75" > Password :</label>
-        <input class=" form-control  w-75  " type="password" name="password"  pattern="[0-9]{8}"  title="Password must contain exactly 8 digits" id = "password_log" >
+        <input class=" form-control  w-75 shadow-none  " type="password" name="password" pattern="[0-9]{8}"  title="Password must contain exactly 8 digits" id = "password_log" >
+        <p id ="message1"> </p>
         <small class="text-danger"> </small>
         <a> </a>
+        <br>
         <?php echo form_error('password')?> 
         <button type="submit" class = "btn btn-success w-75 " >submit</button>
         <br>
