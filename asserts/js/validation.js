@@ -1,7 +1,7 @@
  $('#email_log, #password_log',).focus(function(){
     $(this).addClass("border border-success").removeClass("border border-danger");
-    });
-
+});
+ 
 $('#email_log').on('click', function () {
     $('#message').text('You have to enter the email.').addClass("text-success");
 });

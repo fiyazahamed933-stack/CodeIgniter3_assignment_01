@@ -15,12 +15,12 @@
 
   <div class = " p-4 w-50 h-25 rounded-4 " >
       
-    <form action="<?=base_url('user/login_user')?>" method="POST" class ="p-2" id="loginForm">
+    <form action="<?=base_url('App/login_user')?>" method="POST" class ="p-2" id="loginForm">
         <h3 class="text-success" id = "hearder"  > Log-in to your account </h3>
         <br>
         <label for="" class = "d-flex justify-content-start  w-75" > Email :</label>
         <input class="form-control w-75 shadow-none" type="email" name="email" id="email_log">
-        <p id ="message"> </p>
+        <p id ="message"></p>
         <small class="text-danger"> </small>
         <a></a>
         <?php echo form_error('email')?> 
@@ -37,7 +37,7 @@
        <?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error'); } ?>
     </form>
     <br>
-    <p id = "para" class ="fs-5"> Don't have an account yet?  <a class="btn btn-success" href="<?=base_url('user/signup')?>"> Click </a> </p> 
+    <p id = "para" class ="fs-5"> Don't have an account yet?  <a class="btn btn-success" href="<?=base_url('user/submit')?>"> Click </a> </p> 
     <br>     
     </div>  
 <script src="<?= base_url('asserts/js/validation.js') ?>"></script>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class = " p-4 w-50 h-25 rounded-4 ">
-       <form  id="form" action="<?=base_url('user/submit')?>" method="POST" class = "sign" >
+       <form  id="form" action="<?=base_url('User/submit')?>" method="POST" class = "sign" >
         <h4 class="text-success" id = "">SIGN UP</h4>
         <label for=""  class = "d-flex justify-content-start  w-75" > FirstName  :</label> 
        <input type="taxt" name="first_name" id="first_name" placeholder = "enter the fisrt name " class=" form-control w-75 ">
@@ -49,7 +49,7 @@
       </form>
       <br>
        <p class="text-success fs-5" >
-             Already login<a class="btn btn-success"  href="<?=base_url('user/login')?>"> Click   </a>
+             Already login<a class="btn btn-success"  href="<?=base_url('App/login')?>"> Click   </a>
        </p> 
 </div>
 <script src="<?= base_url('asserts/js/validation.js') ?>"></script>

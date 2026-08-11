@@ -1,5 +1,5 @@
 <?php
-    class user extends CI_Controller{
+    class User extends CI_Controller{
         public function __construct(){
             parent::__construct();
             $this->load->helper('url');
@@ -55,47 +55,9 @@
                 redirect('user/home');
             }
         }
-      redirect('user/signup');
+      redirect('User/signup');
     }
-        public function login(){
-            $this->load->view('login_form');
-        }
-        public function login_user(){
-            $this->form_validation->set_rules('email', 'Email', 'required|trim');
-            $this->form_validation->set_rules('password', 'password' ,'required|trim' );
-            if($this->form_validation->run() == FALSE){
-                $this->load->view('login');
-                return;
-            }
-            if($this->input->server('REQUEST_METHOD') == 'POST') {
-                $email = trim($this->input->post('email'));
-                $password = trim($this->input->post('password'));
-                $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
-                $users = [];
-                if(file_exists($json_file)){
-                    $users = json_decode(file_get_contents($json_file), true) ?? [];
-                }
-                $email_exits = false;
-                foreach($users as $user){
-                    if ($user['email'] == $email) {
-                        $email_exits = true;
-                        if (password_verify($password,$user["password"])) {
-                            $this->session->set_userdata('user_email',$user['email']);
-                            redirect('user/home');
-                            exit();
-                        }
-                        else{
-                            $this->session->set_flashdata('error', 'Incorrect Password');
-                             redirect('user/login');
-                        }
-                    }                  
-                }
-                 if(!$email_exits){
-                        $this->session->set_flashdata('error', 'Invalid gmail');
-                         redirect('user/login');
-                    }
-            }
-        }
+        
         public function home(){
             $this->load->view('home');
             

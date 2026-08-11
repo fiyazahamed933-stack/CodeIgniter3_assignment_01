@@ -36,7 +36,6 @@ $config['base_url'] = 'http://localhost:8000/codeigniter/';
 |
 */
 $config['index_page'] = 'index.php';
-
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

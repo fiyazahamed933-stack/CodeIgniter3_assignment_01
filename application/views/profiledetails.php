@@ -8,14 +8,6 @@
 
 </head>
 <body class = "p-3 mt-3 text-primary ">
-        <center><h4> Welcome.. !!</h4>
-    <br>
-    <div class = "d-flex justify-content-end ">
-       <a class="btn btn-primary " href="<?= base_url('user/signup') ?>" role="button">Logout</a>
-       <br>
-      
-    </div>
-     <a class="btn btn-primary " href="<?= base_url('Profile/details') ?>" role="button">profile</a>
-<?php if ($this->session->flashdata('success')) { echo $this->session->flashdata('success'); } ?>
+        <center><h4> Welcome...!!</h4>
 </body>
 </html>
