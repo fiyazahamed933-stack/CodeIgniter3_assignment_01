@@ -30,7 +30,7 @@
                     if ($user['email'] == $email) {
                         $email_exits = true;
                         if (password_verify($password,$user["password"])) {
-                            $this->session->set_userdata('user_email',$user['email']);
+                            $this->session->set_userdata('email', $email);
                             redirect('user/home');
                             exit();
                         }

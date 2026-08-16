@@ -17,9 +17,7 @@
             $this->load->view('signup_form');
             return;
         }
-        if($this->session->userdata('user_email')) {
-            redirect('user/signup_form');   
-        }
+        
         if($this->input->server('REQUEST_METHOD') == 'POST') {
             $first_name = trim($this->input->post('first_name'));
             $last_name = trim($this->input->post('last_name'));
@@ -51,11 +49,12 @@
                     'password'   => $password_hash
                 ];
                 file_put_contents(("$json_file"),json_encode($users, JSON_PRETTY_PRINT));
-                $this->session->set_flashdata('success','signup successfully');
+                $this->session->set_userdata('email', $email);
+                
                 redirect('user/home');
             }
         }
-      redirect('User/signup');
+      redirect('user/signup');
     }
         
         public function home(){
