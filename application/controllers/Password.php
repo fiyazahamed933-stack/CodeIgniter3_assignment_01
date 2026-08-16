@@ -34,25 +34,14 @@ class Password extends CI_Controller
                     $this->session->set_flashdata('error','Current password is incorrect.');
                     redirect('Password/ChangePassword');
                 }
-                
                 $users[$key]['password'] = $password_hash;
                 file_put_contents(("$json_file"),json_encode($users, JSON_PRETTY_PRINT));
                 $this->session->set_flashdata('success','update the password successfully');
                 redirect('Password/ChangePassword');
             }
-            }
-            
-            
-        }
-        
+            }            
+        }     
     }
-
-    
-
-    }
-
-
-
-
+}
 ?>
         

@@ -11,19 +11,15 @@ class Profile extends CI_Controller
     public function details(){
         $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
         $session_email = $this->session->userdata('email');
-        
         $json = file_get_contents($json_file);  
-        $users = json_decode($json , true );
-       
+        $users = json_decode($json , true );       
         $data['user'] = null;
         foreach($users as $user){
             if($user['email'] == $session_email ){
                 $data['user'] = $user;
                 break;
             }
-
         }
-
         if($data['user'] === NULL){
             echo "user not found ";
             return;
@@ -31,8 +27,6 @@ class Profile extends CI_Controller
         $this->load->view('profiledetails', $data);
     }
     public function update(){
-       
-
     $this->form_validation->set_rules(
         'first_name',
         'First Name',
@@ -44,10 +38,6 @@ class Profile extends CI_Controller
         'required|trim'
     );
     $this->form_validation->set_rules('email', 'Email', 'required');
-
-   
-
-
     if($this->form_validation->run() == FALSE){
         $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
         $session_email = $this->session->userdata('email');

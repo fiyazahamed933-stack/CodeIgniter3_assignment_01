@@ -1,13 +1,13 @@
 <?php
 
-    class App extends CI_Controller{
+    class Login extends CI_Controller{
         public function __construct(){
             parent::__construct();
             $this->load->helper('url');
             $this->load->library('session');
             $this->load->library('form_validation');
         }
-        public function login(){
+        public function signin(){
             $this->load->view('login_form.php');
         }
         public function login_user(){
@@ -36,13 +36,13 @@
                         }
                         else{
                             $this->session->set_flashdata('error', 'Incorrect Password');
-                             redirect('App/login');
+                             redirect('Login/signin');
                         }
                     }                  
                 }
                  if(!$email_exits){
                         $this->session->set_flashdata('error', 'Invalid gmail');
-                         redirect('App/login');
+                         redirect('Login/signin');
                     }
             }
         }

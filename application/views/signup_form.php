@@ -49,7 +49,7 @@
       </form>
       <br>
        <p class="text-success fs-5" >
-             Already login<a class="btn btn-success"  href="<?=base_url('App/login')?>"> Click   </a>
+             Already login<a class="btn btn-success"  href="<?=base_url('Login/signin')?>"> Click   </a>
        </p> 
 </div>
 <script src="<?= base_url('asserts/js/validation.js') ?>"></script>

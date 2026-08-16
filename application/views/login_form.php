@@ -15,7 +15,7 @@
 
   <div class = " p-4 w-50 h-25 rounded-4 " >
       
-    <form action="<?=base_url('App/login_user')?>" method="POST" class ="p-2" id="loginForm">
+    <form action="<?=base_url('Login/login_user')?>" method="POST" class ="p-2" id="loginForm">
         <h3 class="text-success" id = "hearder"  > Log-in to your account </h3>
         <br>
         <label for="" class = "d-flex justify-content-start  w-75" > Email :</label>

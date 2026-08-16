@@ -40,8 +40,6 @@
     <br>
     <br>
     <a class="btn btn-success " href="<?= base_url('Profile/details') ?>" role="button">back</a>
-    
-
  </form>
         
     </div>
