@@ -22,17 +22,17 @@
         <form action=" <?=base_url('Password/update_password')?> "  method="post" >
     <label for="" > Current Password</label>
     <br>
-    <input type="password" name="cuurent_password" id="cuurent_password" class = "form-control shadow-none">
+    <input type="password" name="cuurent_password" id="cuurent_password" class = "form-control shadow-none" pattern="[0-9]{8}"  title="Password must contain exactly 8 digits">
     
      <small class="text-danger"><?= form_error('cuurent_password'); ?></small>
     <label for=""> New Password</label>
     <br>
-    <input type="password" name="new_password" id="new_password" class = "form-control w-75">
+    <input type="password" name="new_password" id="new_password" class = "form-control shadow-none" pattern="[0-9]{8}"  title="Password must contain exactly 8 digits">
     <small class="text-danger"><?= form_error('new_password'); ?></small>
     
     <label for=""> confirm New Password</label>
     <br>
-    <input type="password" name="Comfirm_password" id="new_Comfirm_password" class = "form-control w-75">
+    <input type="password" name="Comfirm_password" id="new_Comfirm_password" class = "form-control shadow-none" pattern="[0-9]{8}"  title="Password must contain exactly 8 digits">
     <small class="text-danger"><?= form_error('Comfirm_password'); ?></small>
 
     <br>

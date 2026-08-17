@@ -27,11 +27,14 @@ class Password extends CI_Controller
         $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
         $json = file_get_contents($json_file);
         $users = json_decode($json, true);
+        if($new_password != $conf_password){
+            $this->session->set_flashdata('error','New password and confirm password do not match.');
+            redirect('Password/ChangePassword');
+        }
         foreach ($users as $key => $user){
-        if($user['email'] == $session_email ){
             if($user['email'] == $session_email){
-                if($user['password'] != $password_hash){
-                    $this->session->set_flashdata('error','Current password is incorrect.');
+                if(!password_verify($cur_password, $user['password'])){
+                    $this->session->set_flashdata('error', 'Current password is incorrect.');
                     redirect('Password/ChangePassword');
                 }
                 $users[$key]['password'] = $password_hash;
@@ -39,9 +42,10 @@ class Password extends CI_Controller
                 $this->session->set_flashdata('success','update the password successfully');
                 redirect('Password/ChangePassword');
             }
-            }            
+            }
+            $this->session->set_flashdata('error','user not found');            
         }     
     }
-}
+
 ?>
         
