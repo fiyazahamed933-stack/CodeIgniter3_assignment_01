@@ -14,6 +14,12 @@
     <div class = "text-start">
         <h2>  User Information <?= $user['first_name']; ?> ... </h2>
         <p> Choose Edit Profile or Personal Info.  <i class="bi bi-pencil-square text-success"></i> </p>
+        <div class ="text-success">
+        <?php if ($this->session->flashdata('success')) { echo $this->session->flashdata('success'); } ?>
+    </div>
+    <div class ="text-danger">
+        <?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error'); } ?>
+    </div>
     </div>
     <div class="card p-4 mt-3 container "  >
         <form action=" <?=base_url('Profile/update')?> "  method="post">

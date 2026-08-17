@@ -1,14 +1,14 @@
-[
-    {
-        "first_name": "fiyaz",
-        "last_name": "ahameddd",
-        "email": "fiyazahamed@gmail.com",
-        "password": "$2y$10$vIlWik5AsAsIzofYYQfvd.N02CEZCP5zOQYWv3ueAFplyq0pPOhhe"
+{
+    "ahamed233@Gmail.com": {
+        "first_name": "ahamed",
+        "last_name": "ss",
+        "email": "ahamed233@Gmail.com",
+        "password": "$2y$10$dwgVjDUHFVLWoM2Dv8z6qusdHhaCSvmuEfEBG7PHvuFHqzFtdlGeG"
     },
-    {
-        "first_name": "abc",
-        "last_name": "d",
-        "email": "abcd@gmail.com",
-        "password": "$2y$10$v0Pv4pQdpCb2azhHN4y94u3owS0ujpCjKK.YCI\/3kqrqRoN3hDwKi"
+    "A@Gmail.com": {
+        "first_name": "Riyaz",
+        "last_name": "Ahmed",
+        "email": "A@Gmail.com",
+        "password": "$2y$10$ghPV3wC9mC.iMNr2RsqnsuvWn\/aUfSGzd\/ZomrzvF2XsQidg3\/NBq"
     }
-]
+}

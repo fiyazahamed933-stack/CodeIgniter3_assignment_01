@@ -8,24 +8,20 @@ class Profile extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
     }
-    public function details(){
-        $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
-        $session_email = $this->session->userdata('email');
-        $json = file_get_contents($json_file);  
-        $users = json_decode($json , true );       
-        $data['user'] = null;
-        foreach($users as $user){
-            if($user['email'] == $session_email ){
-                $data['user'] = $user;
-                break;
-            }
-        }
-        if($data['user'] === NULL){
-            echo "user not found ";
-            return;
-        }
-        $this->load->view('profiledetails', $data);
-    }
+    public function details()
+{
+    $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
+
+    $session_email = $this->session->userdata('email');
+
+    $json = file_get_contents($json_file);
+    $users = json_decode($json, true);
+
+    $data['user'] = $users[$session_email];
+
+    $this->load->view('profiledetails', $data);
+}
+
     public function update(){
     $this->form_validation->set_rules(
         'first_name',
@@ -43,19 +39,7 @@ class Profile extends CI_Controller
         $session_email = $this->session->userdata('email');
         $json = file_get_contents($json_file);
         $users = json_decode($json, true);
-        $data['user'] = null;
-        foreach($users as $user){
-            if($user['email'] == $session_email){
-            $data['user'] = $user;
-            break;
-            }
-        }
-          if ($data['user'] === null) {
-
-                echo "user not found";
-
-                return;
-            }
+        $data['user'] = $users[$session_email];
         $this->load->view('profiledetails', $data);
         return;
     }
@@ -65,22 +49,24 @@ class Profile extends CI_Controller
     $session_email = $this->session->userdata('email');
     $json_file = 'D:\xampp\htdocs\codeigniter\application\models\user_data.json';
     $json = file_get_contents($json_file);
+    $json = file_get_contents($json_file);
     $users = json_decode($json, true);
+    $users[$user_email]['first_name'] = $first_name;
+    $users[$user_email]['last_name'] = $last_name;
+    $users[$user_email]['email'] = $user_email;
     
-    foreach ($users as $key => $user){
-        if($user['email'] == $session_email ){
-            $users[$key]['first_name'] = $first_name;
-            $users[$key]['last_name'] = $last_name;
-            $users[$key]['email'] = $user_email;
-            break;
-        }
-    }
     $update_json = json_encode($users,JSON_PRETTY_PRINT);   
     file_put_contents($json_file,$update_json);
+    $this->session->set_flashdata('success','update the  successfully');
     $this->session->set_userdata('email', $user_email);
     redirect('profile/details');
 }
 }
+
+
+
+
+
 
 
 
